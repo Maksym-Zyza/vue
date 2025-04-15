@@ -1,54 +1,23 @@
 <script setup>
-import { ref } from "vue";
+import SayHello from "./components/SayHello.vue";
 import Cards from "./components/Cards.vue";
-
-const name = "Max";
-const flag = ref(true);
-const count = ref(0);
-const text = ref("");
-
-const onClick = () => {
-  flag.value = !flag.value;
-  count.value++;
-};
-const onReset = () => {
-  flag.value = true;
-  count.value = 0;
-  text.value = "";
-};
+import LoginForm from "./components/LoginForm.vue";
 </script>
 
 <template>
   <div class="container">
-    <h2 v-if="flag">Hello!</h2>
-    <h2 v-else>Good buy!</h2>
-
-    <h2>{{ name }}</h2>
-    <h2>{{ count }}</h2>
-
-    <input type="text" v-model="text" />
-
-    <h3>{{ text }}</h3>
-
-    <button @click="onClick">Click me</button>
-    <button @click="onReset">Reset</button>
+    <SayHello />
 
     <Cards />
+
+    <LoginForm />
   </div>
 </template>
 
 <style scoped>
-h2,
-h3 {
-  margin: 0;
-}
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
   width: 90%;
   margin: 5%;
+  gap: 20px;
 }
 </style>
