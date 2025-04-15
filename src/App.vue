@@ -22,8 +22,8 @@ const onReset = () => {
   <div class="container">
     <h2 v-if="flag">Hello!</h2>
     <h2 v-else>Good buy!</h2>
-    <h2>{{ name }}</h2>
 
+    <h2>{{ name }}</h2>
     <h2>{{ count }}</h2>
 
     <input type="text" v-model="text" />
@@ -32,18 +32,23 @@ const onReset = () => {
 
     <button @click="onClick">Click me</button>
     <button @click="onReset">Reset</button>
-  </div>
 
-  <Cards />
+    <Cards />
+  </div>
 </template>
 
 <style scoped>
+h2,
+h3 {
+  margin: 0;
+}
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
+  width: 90%;
+  margin: 5%;
 }
 </style>
